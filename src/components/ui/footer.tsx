@@ -408,12 +408,11 @@ export function Footer() {
 function CtaMark() {
 	return (
 		<svg
-			className="h-[2.75em] w-auto shrink-0"
+			className="h-[2.75em] w-auto shrink-0 text-blue-smoke"
 			viewBox="0 0 143 162"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
-			className="h-14 md:w-35.75 md:h-40.5 shrink-0 text-blue-smoke"
 		>
 			<mask
 				id="path-1-outside-1_3462_45370"
