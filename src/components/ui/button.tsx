@@ -3,39 +3,47 @@ import { tv, type VariantProps } from '@/lib/tv'
 
 const button = tv({
 	base: [
-		'inline-flex items-center justify-center gap-2',
-		'font-medium leading-none whitespace-nowrap',
-		'rounded-md border border-transparent',
-		'transition-all duration-200',
-		'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-		'disabled:pointer-events-none disabled:opacity-50',
+		'inline-flex items-center justify-center',
+		'font-body text-sm md:text-xs uppercase tracking-wide',
+		'rounded-[2px]',
+		'transition-opacity duration-200',
+		'hover:opacity-80',
 		'cursor-pointer select-none',
+		'whitespace-nowrap',
 	],
 	variants: {
 		variant: {
-			solid: 'bg-brand-600 text-white hover:bg-brand-700 focus-visible:ring-brand-500',
-			outline:
-				'border-border-strong bg-transparent text-fg hover:bg-bg-subtle focus-visible:ring-brand-500',
-			ghost: 'bg-transparent text-fg hover:bg-bg-subtle focus-visible:ring-brand-500',
-			destructive: 'bg-error-500 text-white hover:bg-red-600 focus-visible:ring-error-500',
+			opal: 'bg-opal text-william',
+			khaki: 'bg-indian-khaki text-ecru-white',
+			teal: 'bg-william text-ecru-white',
+			dark: 'bg-gray-olive text-ecru-white',
+			outline: 'border border-current bg-transparent text-current',
 		},
 		size: {
-			sm: 'h-8 px-3 text-sm',
-			md: 'h-10 px-4 text-sm',
-			lg: 'h-12 px-6 text-base',
-			icon: 'h-10 w-10',
+			sm: 'px-[1em] py-[0.625em]',
+			md: 'px-[1.25em] h-[3em]',
 		},
 	},
 	defaultVariants: {
-		variant: 'solid',
+		variant: 'opal',
 		size: 'md',
 	},
 })
 
 type ButtonVariants = VariantProps<typeof button>
 
-type ButtonProps = ComponentProps<'button'> & ButtonVariants
+type ButtonAsButton = ComponentProps<'button'> & ButtonVariants & { href?: undefined }
+
+type ButtonAsAnchor = ComponentProps<'a'> & ButtonVariants & { href: string }
+
+type ButtonProps = ButtonAsButton | ButtonAsAnchor
 
 export function Button({ variant, size, className, ...props }: ButtonProps) {
-	return <button className={button({ variant, size, className })} {...props} />
+	const cls = button({ variant, size, className })
+
+	if ('href' in props && props.href !== undefined) {
+		return <a className={cls} {...(props as ComponentProps<'a'>)} />
+	}
+
+	return <button type="button" className={cls} {...(props as ComponentProps<'button'>)} />
 }

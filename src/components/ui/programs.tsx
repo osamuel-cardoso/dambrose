@@ -75,12 +75,12 @@ export function Programs() {
 							</RevealImage>
 
 							{/* Info */}
-							<BlurReveal className="mt-8 flex flex-col gap-6">
+							<div className="mt-8 flex flex-col gap-6">
 								<span className="font-body text-xs text-olive-haze uppercase tracking-wide">
 									{card.tag}
 								</span>
-								<p className="font-body text-sm text-gray-olive ">{card.description}</p>
-							</BlurReveal>
+								<p className="font-body text-sm text-gray-olive">{card.description}</p>
+							</div>
 
 							{/* CTA */}
 							<a

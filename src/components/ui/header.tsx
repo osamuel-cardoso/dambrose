@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { MobileNav } from '@/components/ui/mobile-nav'
 
@@ -141,12 +142,9 @@ export function Header() {
 
 				{/* ── CTA ────────────────────────────────────────── */}
 				<div className="hidden md:inline-flex justify-end">
-					<button
-						type="button"
-						className="font-body uppercase text-ecru-white bg-gray-olive px-4 text-xs py-2.5 leading-none"
-					>
+					<Button variant="dark">
 						Inquiry about membership
-					</button>
+					</Button>
 				</div>
 			</Container>
 		</header>

@@ -48,13 +48,18 @@ const LINKS = [
 export function MobileNav() {
 	const [open, setOpen] = useState(false)
 
+	const toggle = (next: boolean) => {
+		setOpen(next)
+		document.documentElement.style.overflow = next ? 'hidden' : ''
+	}
+
 	return (
 		<>
 			{/* ── Trigger ─────────────────────────────────────── */}
 			<button
 				type="button"
 				aria-label={open ? 'Close navigation' : 'Open navigation'}
-				onClick={() => setOpen(true)}
+				onClick={() => toggle(true)}
 				className="flex flex-col items-start justify-center gap-[0.3125em] w-[2.5em] h-[2.5em] md:w-[3em] md:h-[3em]"
 			>
 				<span className="block w-[1.0625em] h-px bg-gray-olive" />
@@ -77,7 +82,7 @@ export function MobileNav() {
 							<button
 								type="button"
 								aria-label="Close navigation"
-								onClick={() => setOpen(false)}
+								onClick={() => toggle(false)}
 								className="w-[3em] h-[3em] rounded-full bg-rangoon-green flex items-center justify-center"
 							>
 								<svg
@@ -107,7 +112,7 @@ export function MobileNav() {
 									<motion.li key={link.href} variants={itemVariants}>
 										<a
 											href={link.href}
-											onClick={() => setOpen(false)}
+											onClick={() => toggle(false)}
 											className={`font-display text-4xl leading-tight text-olive-haze block py-[0.2em] ${
 												link.active ? 'border-b border-rangoon-green w-fit' : ''
 											} ${link.italic ? 'italic' : ''}`}

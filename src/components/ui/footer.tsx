@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { RevealImage } from '@/components/ui/reveal-image'
 
@@ -47,10 +48,10 @@ export function Footer() {
 					{' '}
 					{/* ── CTA ──────────────────────────────────────────────── */}
 					<div className="flex flex-col items-center">
-						<div className="relative overflow-visible bg-ecru-white">
+						<div className="relative overflow-visible bg-ecru-white w-full max-w-304">
 							{/* Flower — top-left, bleeds above card */}
 							<RevealImage
-								className="absolute -top-12 left-0 w-28 h-40 md:w-56 md:h-56 overflow-hidden"
+								className="absolute -top-12 left-0 md:left-[12%] w-28 h-40 md:w-40 md:h-56 overflow-hidden"
 								delay={0.2}
 							>
 								<Image src="/footer/flower.png" alt="" fill className="object-cover" />
@@ -58,7 +59,7 @@ export function Footer() {
 
 							{/* Rock — bottom-right, bleeds outside card */}
 							<RevealImage
-								className="absolute bottom-[-5%] -right-[12%] md:right-0 md:bottom-0 w-[8em] h-[6em] md:w-[14em] md:h-[10em] overflow-hidden"
+								className="absolute bottom-[-5%] -right-[12%] md:-right-[8%] md:bottom-[8%] w-32 h-24 md:w-[14em] md:h-[10em] overflow-hidden"
 								delay={0.4}
 							>
 								<Image src="/footer/rock.png" alt="" fill className="object-cover" />
@@ -67,18 +68,15 @@ export function Footer() {
 							<Container className="relative pt-12 pb-12 md:pt-[7.8em] md:pb-[11em]">
 								<div>
 									{/* Room — absolute, centered, bottom */}
-									<div className="relative z-10 flex flex-col items-center gap-[2em] md:gap-[3em] text-center">
+									<div className="relative w-full z-10 flex flex-col items-center gap-[2em] md:gap-[3em] text-center">
 										<CtaMark />
-										<h2 className="font-display text-4xl md:text-7xl text-olive-haze leading-tight">
-											Begin a <em className="font-display italic">new relationship</em> with your
-											health.
+										<h2 className="font-display text-4xl md:text-7xl text-blue-smoke leading-tight">
+											Begin a <em className="font-display italic">new relationship</em> <br /> with
+											your health.
 										</h2>
-										<a
-											href="/contact"
-											className="flex items-center justify-center md:inline-flex rounded-[2px] bg-opal px-[1em] py-[0.625em] font-body text-xs text-william uppercase"
-										>
+										<Button href="/contact" variant="opal" size="sm">
 											Inquiry about membership
-										</a>
+										</Button>
 									</div>
 								</div>
 							</Container>
@@ -408,7 +406,7 @@ export function Footer() {
 function CtaMark() {
 	return (
 		<svg
-			className="h-[2.75em] w-auto shrink-0 text-blue-smoke"
+			className="h-11 md:h-32 w-auto shrink-0 text-blue-smoke"
 			viewBox="0 0 143 162"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
