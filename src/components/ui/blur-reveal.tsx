@@ -5,7 +5,7 @@ import { useBlurReveal } from '@/hooks/use-blur-reveal'
 type BlurRevealProps = {
 	children: React.ReactNode
 	className?: string
-	as?: keyof JSX.IntrinsicElements
+	as?: keyof React.JSX.IntrinsicElements
 	duration?: number
 	delay?: number
 	ease?: string
@@ -16,7 +16,7 @@ type BlurRevealProps = {
 export function BlurReveal({
 	children,
 	className = '',
-	as: Tag = 'div',
+	as: Tag = 'div' as keyof React.JSX.IntrinsicElements,
 	duration,
 	delay,
 	ease,
@@ -25,9 +25,12 @@ export function BlurReveal({
 }: BlurRevealProps) {
 	const ref = useBlurReveal<HTMLElement>({ duration, delay, ease, start, blur })
 
+	// biome-ignore lint/suspicious/noExplicitAny: polymorphic ref
+	const AnyTag = Tag as any
+
 	return (
-		<Tag ref={ref as React.Ref<HTMLElement>} className={className}>
+		<AnyTag ref={ref} className={className}>
 			{children}
-		</Tag>
+		</AnyTag>
 	)
 }
