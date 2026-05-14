@@ -22,13 +22,13 @@ const itemVariants = {
 		opacity: 1,
 		filter: 'blur(0px)',
 		y: 0,
-		transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+		transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 	},
 	exit: {
 		opacity: 0,
 		filter: 'blur(8px)',
 		y: -8,
-		transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] },
+		transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] },
 	},
 }
 
@@ -70,7 +70,7 @@ export function MobileNav() {
 						initial={{ clipPath: 'inset(0 0 100% 0)' }}
 						animate={{ clipPath: 'inset(0 0 0% 0)' }}
 						exit={{ clipPath: 'inset(0 0 100% 0)' }}
-						transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
+						transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] as [number, number, number, number] }}
 					>
 						{/* Top bar */}
 						<div className="bg-ecru-white px-[1.25em] py-[1.25em]">
