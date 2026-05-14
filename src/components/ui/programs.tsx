@@ -3,13 +3,14 @@ import type { StaticImageData } from 'next/image'
 import { BlurReveal } from '@/components/ui/blur-reveal'
 import { Container } from '@/components/ui/container'
 import { RevealImage } from '@/components/ui/reveal-image'
+import { Button } from './button'
 
 type ProgramCard = {
 	tag: string
 	description: string
 	ctaLabel: string
 	ctaHref: string
-	ctaBg: string
+	ctaBg: 'opal' | 'khaki' | 'teal' | 'dark' | 'outline'
 	image?: StaticImageData | string
 	imageAlt?: string
 }
@@ -21,7 +22,7 @@ const CARDS: ProgramCard[] = [
 			'A primary care program focused on diagnosis, treatment, urgent care, and ongoing health management.',
 		ctaLabel: 'EXPLORE ALMA',
 		ctaHref: '/alma',
-		ctaBg: 'bg-indian-khaki',
+		ctaBg: 'khaki',
 		image: '/programs/alma.png',
 		imageAlt: 'ALMA program',
 	},
@@ -31,7 +32,7 @@ const CARDS: ProgramCard[] = [
 			'A longevity-focused program designed to anticipate risk, improve wellness, and preserve vitality.',
 		ctaLabel: 'EXPLORE PRAEVA',
 		ctaHref: '/praeva',
-		ctaBg: 'bg-william',
+		ctaBg: 'opal',
 		image: '/programs/praeva.png',
 		imageAlt: 'PRAEVA program',
 	},
@@ -83,12 +84,9 @@ export function Programs() {
 							</div>
 
 							{/* CTA */}
-							<a
-								href={card.ctaHref}
-								className={`mt-8 flex items-center justify-center md:self-start md:inline-flex rounded-[2px] px-4 py-2.5 font-body text-xs text-ecru-white uppercase ${card.ctaBg}`}
-							>
+							<Button variant={card.ctaBg} href={card.ctaHref} className="mt-8">
 								{card.ctaLabel}
-							</a>
+							</Button>
 						</div>
 					))}
 				</div>

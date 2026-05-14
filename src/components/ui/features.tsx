@@ -40,8 +40,8 @@ const ITEMS = [
 
 export function Features() {
 	return (
-		<section className="w-full bg-ecru-white py-[4em] md:py-[6em]">
-			<Container className="flex flex-col gap-[5em]">
+		<section className="w-full bg-ecru-white py-16 md:py-24">
+			<Container className="flex flex-col gap-20">
 				{/* ── Heading ──────────────────────────────────────── */}
 				<BlurReveal>
 					<h2 className="font-display text-4xl md:text-5xl text-olive-haze text-center leading-tight">
@@ -50,9 +50,9 @@ export function Features() {
 				</BlurReveal>
 
 				{/* ── Grid ─────────────────────────────────────────── */}
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-x-[1.5em] gap-y-[2.5em]">
+				<div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-10">
 					{ITEMS.map((item) => (
-						<div key={item.title} className="flex flex-col gap-[1.25em]">
+						<div key={item.title} className="flex flex-col gap-5">
 							<RevealImage
 								className={`relative w-full ${item.imageHeight} overflow-hidden bg-bison-hide`}
 								delay={item.delay}
@@ -60,7 +60,7 @@ export function Features() {
 								<Image src={item.image} alt={item.alt} fill className="object-cover" />
 							</RevealImage>
 
-							<BlurReveal className="flex flex-col gap-[0.75em]" delay={item.delay + 0.2}>
+							<BlurReveal className="flex flex-col gap-3" delay={item.delay + 0.2}>
 								<h3 className="font-display italic text-2xl text-olive-haze leading-snug">
 									{item.title}
 								</h3>
