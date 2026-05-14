@@ -203,7 +203,7 @@ function SocialIcon({ label, children }: { label: string; children: React.ReactN
 		<button
 			type="button"
 			aria-label={label}
-			className="w-[2em] h-[2em] rounded-full border border-opal/30 flex items-center justify-center text-opal"
+			className="w-[3em] h-[3em] rounded-full border border-opal/30 flex items-center justify-center text-opal"
 		>
 			{children}
 		</button>
