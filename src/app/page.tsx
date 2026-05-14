@@ -10,8 +10,8 @@ export default function HomePage() {
 			<Header />
 			<Hero />
 			<Programs />
-			<Foundation />
 			<Features />
+			<Foundation />
 		</>
 	)
 }
