@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
+import { BlurReveal } from '@/components/ui/blur-reveal'
 import { Container } from '@/components/ui/container'
 import { RevealImage } from '@/components/ui/reveal-image'
 
@@ -21,6 +22,7 @@ const CARDS: ProgramCard[] = [
 		ctaLabel: 'EXPLORE ALMA',
 		ctaHref: '/alma',
 		ctaBg: 'bg-indian-khaki',
+		image: '/programs/alma.png',
 		imageAlt: 'ALMA program',
 	},
 	{
@@ -30,57 +32,60 @@ const CARDS: ProgramCard[] = [
 		ctaLabel: 'EXPLORE PRAEVA',
 		ctaHref: '/praeva',
 		ctaBg: 'bg-william',
+		image: '/programs/praeva.png',
 		imageAlt: 'PRAEVA program',
 	},
 ]
 
 export function Programs() {
 	return (
-		<section className="w-full bg-ecru-white py-[4em] md:py-[7em]">
+		<section className="w-full bg-ecru-white py-16 md:py-28">
 			<Container>
 				{/* ── Header ───────────────────────────────────────────── */}
-				<div className="flex flex-col gap-[2em] md:grid md:grid-cols-12 md:gap-[1em] md:items-start">
+				<BlurReveal className="flex flex-col gap-8 md:grid md:grid-cols-12 md:gap-4 md:items-start">
 					<p className="md:col-span-3 font-body text-xs text-olive-haze uppercase tracking-wide">
 						PROGRAMS
 					</p>
-					<div className="md:col-span-6 flex flex-col gap-[2em]">
+					<div className="md:col-span-6 flex flex-col gap-8">
 						<h2 className="font-display text-3xl md:text-5xl text-olive-haze leading-tight">
 							Access prevention, treatment, and renewal in one continuous path.
 						</h2>
-						<p className="font-body text-sm text-rangitoto">
+						<p className="font-body text-sm text-gray-olive">
 							DAMBROSE offers a physician-led approach shaped around individual health goals, from
 							prevention to renewal.
 						</p>
 					</div>
-				</div>
+				</BlurReveal>
 
 				{/* ── Cards ────────────────────────────────────────────── */}
-				<div className="mt-[4em] md:mt-[7em] grid grid-cols-1 md:grid-cols-2 gap-[2em] md:gap-[0.5em]">
+				<div className="mt-16 md:mt-28 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-2">
 					{CARDS.map((card) => (
 						<div key={card.tag} className="flex flex-col">
 							{/* Image */}
-							<RevealImage className="w-full aspect-[10/9] overflow-hidden bg-bison-hide">
+							<RevealImage className="w-full aspect-10/9 overflow-hidden bg-bison-hide">
 								{card.image && (
 									<Image
 										src={card.image}
 										alt={card.imageAlt ?? ''}
+										width={900}
+										height={810}
 										className="w-full h-full object-cover"
 									/>
 								)}
 							</RevealImage>
 
 							{/* Info */}
-							<div className="mt-[2em] flex flex-col gap-[1.5em]">
+							<BlurReveal className="mt-8 flex flex-col gap-6">
 								<span className="font-body text-xs text-olive-haze uppercase tracking-wide">
 									{card.tag}
 								</span>
-								<p className="font-body text-sm text-rangitoto">{card.description}</p>
-							</div>
+								<p className="font-body text-sm text-gray-olive ">{card.description}</p>
+							</BlurReveal>
 
 							{/* CTA */}
 							<a
 								href={card.ctaHref}
-								className={`mt-[2em] self-start inline-flex items-center rounded-[2px] px-[1em] py-[0.625em] font-body text-xs text-ecru-white uppercase ${card.ctaBg}`}
+								className={`mt-8 flex items-center justify-center md:self-start md:inline-flex rounded-[2px] px-4 py-2.5 font-body text-xs text-ecru-white uppercase ${card.ctaBg}`}
 							>
 								{card.ctaLabel}
 							</a>

@@ -1,19 +1,12 @@
 import { Container } from '@/components/ui/container'
+import { MobileNav } from '@/components/ui/mobile-nav'
 
 export function Header() {
 	return (
 		<header className="w-full bg-ecru-white">
 			<Container className="grid grid-cols-2 md:grid-cols-3  gap-4 items-center py-[1.25em] md:py-[2em]">
 				{/* ── Hamburger ──────────────────────────────────── */}
-				<button
-					type="button"
-					aria-label="Open navigation"
-					className="flex flex-col items-start justify-center gap-[0.3125em] w-[2.5em] h-[2.5em] md:w-[3em] md:h-[3em]"
-				>
-					<span className="block w-[1.0625em] h-px bg-gray-olive" />
-					<span className="block w-[1.0625em] h-px bg-gray-olive" />
-					<span className="block w-[1.0625em] h-px bg-gray-olive" />
-				</button>
+				<MobileNav />
 
 				{/* ── Wordmark ───────────────────────────────────── */}
 				<div className="flex flex-col items-end md:items-center gap-[0.9375em]">
