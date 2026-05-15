@@ -40,7 +40,7 @@ const CARDS: ProgramCard[] = [
 
 export function Programs() {
 	return (
-		<section className="w-full bg-ecru-white py-16 md:py-28">
+		<section className="w-full bg-ecru-white py-16 md:py-28 border-t border-black/10">
 			<Container>
 				{/* ── Header ───────────────────────────────────────────── */}
 				<BlurReveal className="flex flex-col gap-8 md:grid md:grid-cols-12 md:gap-4 md:items-start">
@@ -84,7 +84,7 @@ export function Programs() {
 							</div>
 
 							{/* CTA */}
-							<Button variant={card.ctaBg} href={card.ctaHref} className="mt-8">
+							<Button variant={card.ctaBg} href={card.ctaHref} className="mt-8 w-fit">
 								{card.ctaLabel}
 							</Button>
 						</div>

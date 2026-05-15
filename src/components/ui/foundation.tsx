@@ -3,7 +3,7 @@ import { BlurReveal } from '@/components/ui/blur-reveal'
 export function Foundation() {
 	return (
 		<section
-			className="w-full pt-24 md:pt-48 pb-0 flex flex-col justify-end items-center h-[60vh] md:h-auto"
+			className="w-full pt-24 md:pt-48 pb-0 flex flex-col justify-end items-center h-[60vh] md:h-auto border-t border-black/10"
 			style={{ backgroundColor: '#ae4000' }}
 		>
 			{/* ── Card ─────────────────────────────────────────── */}
