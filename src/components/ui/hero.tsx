@@ -19,7 +19,7 @@ export function Hero() {
 			</Container>
 
 			{/* Content strip */}
-			<BlurReveal className="mx-auto w-full max-w-[85em] px-[1.25em] md:px-[2.5em] flex flex-col gap-[1.5em] pt-[2em] pb-[2.5em] md:flex-row md:items-center md:justify-between md:pt-[1.125em] md:pb-[2.5em]">
+			<BlurReveal className="w-full px-[1.25em] md:px-[2.5em] flex flex-col gap-[1.5em] pt-[2em] pb-[2.5em] md:flex-row md:items-center md:justify-between md:pt-[1.125em] md:pb-[2.5em]">
 				<h1 className="font-display text-5xl md:text-6xl text-olive-haze leading-[1.15]">
 					Lifelong care that <em className="font-display italic">knows</em> you.
 				</h1>
