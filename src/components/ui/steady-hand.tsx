@@ -22,7 +22,7 @@ export function SteadyHand() {
 					<div className="flex flex-col md:flex-row md:justify-between md:items-start">
 						{/* Left: Image */}
 						<RevealImage className="relative w-full md:w-[34%] aspect-463/368 overflow-hidden">
-							<Image src="/features/doctor.png" alt="" fill className="object-cover" />
+							<Image src="/features/elder.png" alt="" fill className="object-cover" />
 						</RevealImage>
 
 						{/* Right: Text + signature + button */}

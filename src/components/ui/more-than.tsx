@@ -23,7 +23,7 @@ export function MoreThan() {
 						{/* Left column */}
 						<div className="flex flex-col gap-4 md:pt-40 md:w-[41.5%] shrink-0">
 							<RevealImage className="relative w-full aspect-564/400 overflow-hidden bg-bison-hide">
-								<Image src="/features/hands.png" alt="" fill className="object-cover" />
+								<Image src="/features/botanical-red.png" alt="" fill className="object-cover" />
 							</RevealImage>
 
 							<BlurReveal delay={0.15}>
@@ -61,7 +61,7 @@ export function MoreThan() {
 								delay={0.2}
 								className="relative w-full aspect-680/642 overflow-hidden bg-bison-hide"
 							>
-								<Image src="/features/doctor.png" alt="" fill className="object-cover" />
+								<Image src="/features/kitchen.png" alt="" fill className="object-cover" />
 							</RevealImage>
 						</div>
 					</div>

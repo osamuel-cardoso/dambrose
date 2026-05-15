@@ -34,7 +34,7 @@ export function HowMembershipWorks() {
 					<div className="grid grid-cols-1 md:grid-cols-3 items-start">
 						{/* Left panel — hidden on mobile */}
 						<RevealImage className="hidden md:block relative overflow-hidden aspect-[453/531]">
-							<Image src="/features/hands.png" alt="" fill className="object-cover" />
+							<Image src="/features/anthurium.png" alt="" fill className="object-cover" />
 							<div className="absolute inset-0 bg-black/20" />
 						</RevealImage>
 
@@ -43,7 +43,7 @@ export function HowMembershipWorks() {
 							delay={0.15}
 							className="relative overflow-hidden aspect-[4/5] md:aspect-[454/711]"
 						>
-							<Image src="/features/doctor.png" alt="" fill className="object-cover" />
+							<Image src="/features/kitchen.png" alt="" fill className="object-cover" />
 							<div className="absolute inset-0 bg-black/25" />
 							<div className="absolute inset-0 flex items-center justify-center p-8">
 								<div className="flex flex-col items-center gap-6 md:gap-8 text-center">
@@ -66,7 +66,7 @@ export function HowMembershipWorks() {
 							delay={0.3}
 							className="hidden md:block relative overflow-hidden aspect-[453/440]"
 						>
-							<Image src="/features/landscape.png" alt="" fill className="object-cover" />
+							<Image src="/features/elder.png" alt="" fill className="object-cover" />
 							<div className="absolute inset-0 bg-black/25" />
 						</RevealImage>
 					</div>

@@ -7,8 +7,8 @@ import { RevealImage } from '@/components/ui/reveal-image'
 export function Hero() {
 	return (
 		<section className="w-full bg-ecru-white flex flex-col h-[calc(100dvh-5em)] md:h-[calc(100dvh-7em)]">
-			{/* Image — fills remaining height */}
-			<Container className="flex-1 min-h-0">
+			{/* Image — fills remaining height, full bleed */}
+			<Container className="flex-1 min-h-0 max-w-none">
 				<RevealImage className="w-full h-full overflow-hidden bg-bison-hide" start="top 95%">
 					<Image
 						src={hero}

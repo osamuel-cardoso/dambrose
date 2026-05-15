@@ -30,7 +30,7 @@ export function Relationships() {
 					<div className="relative flex flex-col md:flex-row md:items-start md:min-h-[428px]">
 						{/* Image */}
 						<RevealImage className="relative w-full md:absolute md:left-[167px] md:top-0 aspect-501/368 md:w-[501px] overflow-hidden">
-							<Image src="/features/doctor.png" alt="" fill className="object-cover" />
+							<Image src="/features/elder.png" alt="" fill className="object-cover" />
 						</RevealImage>
 
 						{/* Botanical decoration — top-right of image area */}
